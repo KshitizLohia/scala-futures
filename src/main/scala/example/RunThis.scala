@@ -34,4 +34,6 @@ object RunThis extends App {
   val tasks: Seq[Runnable] = (1 to 5).map(makeRunnableCrash) ++ (6 to 7).map(makeRunnable)
 
   tasks.foreach(task ⇒ tpe.submit(task))
+
+  tpe.shutdown()
 }
